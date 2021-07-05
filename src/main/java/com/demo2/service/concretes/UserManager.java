@@ -5,7 +5,6 @@ import com.demo2.core.utilities.results.Result;
 import com.demo2.core.utilities.results.SuccessDataResult;
 import com.demo2.core.utilities.results.SuccessResult;
 import com.demo2.dataAccess.UserDao;
-import com.demo2.dataAccess.UserPictureDao;
 import com.demo2.entities.User;
 import com.demo2.entities.dtos.UserDto;
 import com.demo2.service.abstracts.UserService;
@@ -67,6 +66,7 @@ public class UserManager implements UserService {
 
         User user = modelMapper.map(userDto, User.class);
         user.setStatusId(1L);
+        user.setIsActive(true);
         userDao.save(user);
         return new SuccessResult("Kullanıcı Eklendi");
     }

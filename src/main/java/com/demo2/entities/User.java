@@ -45,7 +45,6 @@ public class User {
     @Column(name = "status_id")
     private Long statusId;
 
-    @OneToOne(mappedBy = "user")
-    private UserPicture userPicture;
+
 
 }

@@ -40,6 +40,7 @@ public class UsersController {
     public DataResult<List<UserDto>> findAllByIsActiveTrue() {
         return userService.findAllByIsActiveTrue();
     }
+
     @PutMapping("/updateUser")
     public void updateUser(@RequestBody User user, @RequestParam Long id){
         userService.updateUser(user,id);

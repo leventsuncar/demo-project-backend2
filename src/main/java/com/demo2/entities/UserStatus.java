@@ -21,7 +21,9 @@ public class UserStatus {
     @Column(name = "status_level", nullable = false)
     private String statusLevel;
 
-    @Column(name = "access_privilege", nullable = false)
+
+    // join
+    @Column(name = "role_privilege", nullable = false)
     private String accessPrivilege;
 
 

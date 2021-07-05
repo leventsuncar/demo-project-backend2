@@ -2,7 +2,7 @@ package com.demo2.entities.dtos;
 
 import lombok.Data;
 
-import java.io.File;
+
 
 @Data
 public class UserDto {
@@ -16,6 +16,7 @@ public class UserDto {
     private String email;
     private String confirmPassword;
     private String pictureURL;
+    private Boolean isActive;
 
 
 
