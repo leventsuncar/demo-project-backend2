@@ -96,35 +96,31 @@ public class UserManager implements UserService {
         if (user1 != null) {
 
 
-            if (!user.getStatusId().equals(0)) {
-                user1.setStatusId(user.getStatusId());
-            }
-            if (user.getUserName().length() != 0) {
+
+
                 user1.setUserName(user.getUserName());
-            }
-            if (user.getEmail().length() != 0) {
+
+
                 user1.setEmail(user.getEmail());
-            }
-            if (user.getIsActive() != null) {
-                user1.setIsActive(user.getIsActive());
-            }
-            if (user.getLastName().length() != 0) {
+
+
+
                 user1.setLastName(user.getLastName());
-            }
-            if (user.getFirstName().length() != 0)
+
+
                 user1.setFirstName(user.getFirstName());
 
-            if (user.getPhoneNumber() != 0) {
-                user1.setPhoneNumber(user.getPhoneNumber());
-            }
 
-            if (user.getPassword().length() != 0) {
+                user1.setPhoneNumber(user.getPhoneNumber());
+
+
+
                 //eğer şifre değişirse
                 user1.setPreviousPassword(user1.getPassword());
                 //var olan şifre previous passworda atılır
                 user1.setPassword(user.getPassword());
                 //parametreden gelen şifre ise password e atanır
-            }
+
         }else{
             return new ErrorResult("Kullanıcı Bulunamadı");
         }
@@ -137,10 +133,10 @@ public class UserManager implements UserService {
         //Bu kod hiç hoşuma gitmedi. Belki frontendde hallederim.
         //Daha iyi yolu bulunacak
 
-        userDao.delete(user);
-        //eski user'ı siliyorum
+
+
         userDao.save(user1);
-        //yenisini kaydediyorum
+
 
         return new SuccessResult("Kullanıcı Güncellendi");
 
@@ -149,7 +145,7 @@ public class UserManager implements UserService {
     @Override
     public Result signIn(String userName, String password) {
         User user = userDao.findUserByUserName(userName);
-        if (user != null && user.getIsActive().equals(true)) {
+        if (user != null ) {
             if (user.getPassword().equals(password)) {
                 return new SuccessResult("Giriş Yapılıyor");
             } else {

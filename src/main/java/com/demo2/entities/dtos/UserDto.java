@@ -17,6 +17,7 @@ public class UserDto {
     private String confirmPassword;
     private String pictureURL;
     private Boolean isActive;
+    private Long statusId;
 
 
 
